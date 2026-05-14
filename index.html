@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,22 +7,18 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="img/svg+xml" href="/img/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Aplicación del clima" />
-    <link rel="manifest" href="/img/favicon/site.webmanifest" />
 </head>
 
 <body>
-    <div class="container my-5">
-        <h1 class="text-center title">El clima en:</h1>
+    <div class="container my-5" style="max-width: 500px;">
+        <h1 class="text-center title mb-4">El clima en:</h1>
+
         <form class="search-loaction">
-            <input type="text" name="city" placeholder="El clima en?" autocomplete="off"
+            <input type="search" name="city" placeholder="El clima en..." autocomplete="off"
                 class="form-control text-muted form-rounded p-4 shadow-sm" />
         </form>
 
-        <div class="card rounded my-3 shadow-lg d-none back-card">
+        <div id="main-card" class="card rounded my-3 shadow-lg back-card d-none">
             <div class="card-top text-center">
                 <div class="city-name my-3">
                     <p>Honduras</p>
@@ -33,37 +28,21 @@
             </div>
 
             <div class="card-body">
-                <div class="card-mid row">
-                    <div class="col-8 text-center temp">
-                        <span>30&deg;C</span>
-                    </div>
-                    <div class="col-4 condition-temp">
-                        <p class="condition">Tormenta con truenos</p>
-                        <p class="high">30&deg;C</p>
-                        <p class="low">27&deg;C</p>
-                    </div>
                 </div>
+        </div>
 
-                <div class="icon-container card shadow mx-auto">
-                    <img src="img/cloud.svg" alt="" />
-                </div>
-                <div class="card-bottom px-5 py-4 row">
-                    <div class="col text-center">
-                        <p>30&deg;C</p>
-                        <span>Sensación térmica</span>
+        <div id="forecast-section" class="d-none">
+            <h3 class="text-center mt-4 mb-3" style="font-size: 1.2rem;">Pronóstico de los siguientes 7 días:</h3>
+            <div class="card rounded shadow-lg back-card">
+                <div id="forecast" class="p-0">
                     </div>
-                    <div class="col text-center">
-                        <p>55%</p>
-                        <span>Humedad</span>
-                    </div>
-                </div>
             </div>
         </div>
+
     </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/request.js"></script>
     <script src="js/index.js"></script>
 </body>
-
 </html>
